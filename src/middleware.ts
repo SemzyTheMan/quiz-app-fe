@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 
 // Define paths that don't require authentication
 const publicPaths = ["/login", "/signup",];
-const protectedPaths = ["/"];
+const protectedPaths = ["/","/questions"];
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
@@ -48,5 +48,5 @@ export function middleware(request: NextRequest) {
 
 // Configure which routes the middleware should run on
 export const config = {
-  matcher: ["/", "/login"],
+  matcher: ["/", "/login","/questions"],
 };
